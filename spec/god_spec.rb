@@ -21,11 +21,12 @@ describe God do
 
   context "when summons judegement day" do
     let(:earth) { God.create_earth }
+    let(:heaven) { God.create_heaven }
     let(:testament) { God.create_testament  }
 
     it "should summon a universe for judgement day" do
-      earth.should_receive(:summon_space_for_judgement).with(testament)
-      God.summon_for_judgement(earth, testament)
+      earth.should_receive(:summon_space_for_judgement).with(testament,heaven)
+      God.summon_for_judgement(earth, testament, heaven)
     end
   
   end

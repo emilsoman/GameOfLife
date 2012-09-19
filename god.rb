@@ -15,10 +15,8 @@ class God
     return Testament.new
   end
 
-  def self.summon_for_judgement(universe,testament)
-    heaven_going_cells = universe.summon_space_for_judgement(testament)
-    return heaven_going_cells
+  def self.summon_for_judgement(earth,testament,heaven)
+    earth.summon_space_for_judgement(testament,heaven)
   end
-
   
 end

@@ -27,8 +27,9 @@ describe Universe do
   context "when summoned for judgement" do
     it "should find all cells worthy of going to heaven" do
       testament = double('Testament')
-      testament.should_receive(:find_cells_passing_judgement).with(earth.space)
-      earth.summon_space_for_judgement(testament)
+      heaven = double('Heaven')
+      testament.should_receive(:send_worthy_cells_to_heaven).with(earth.space,heaven)
+      earth.summon_space_for_judgement(testament,heaven)
     end
   end
 

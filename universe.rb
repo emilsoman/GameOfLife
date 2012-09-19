@@ -13,16 +13,24 @@ class Universe
     cordinate_list.each do |cordinate|
       x = cordinate[0]
       y = cordinate[1]
-      @space.create_at(x , y)
+      @space.create_at(x, y)
     end
+  end
+
+  def seed_life_at(x,y)
+    @space.create_at(x, y)
   end
 
   def wipe
     @space = Space.new
   end
 
-  def summon_space_for_judgement(testament)
-    testament.find_cells_passing_judgement(@space)
+  def summon_space_for_judgement(testament,heaven)
+    testament.send_worthy_cells_to_heaven(@space,heaven)
+  end
+
+  def to_s
+    @space.to_s 
   end
 
 end
