@@ -18,5 +18,11 @@ class God
   def self.summon_for_judgement(earth,testament,heaven)
     earth.summon_space_for_judgement(testament,heaven)
   end
+
+  def self.monitor_universe(universe)
+    puts "\e[H\e[2J" # clears the screen
+    puts universe.to_s
+    sleep 0.25
+  end
   
 end

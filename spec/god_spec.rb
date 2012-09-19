@@ -31,6 +31,10 @@ describe God do
   
   end
 
-  it "should be able to monitor life on a universe"
+  it "should be able to monitor life on a universe" do
+    earth = Universe.new
+    earth.should_receive(:to_s)
+    God.monitor_universe(earth)
+  end
 
 end
